@@ -1,7 +1,7 @@
 {
   "name": "react-native-rtl-kit",
-  "version": "0.1.0",
-  "description": "Automatically convert physical React Native style properties (marginLeft, paddingRight, textAlign: 'left', ...) into RTL-safe logical properties.",
+  "version": "0.1.0-beta.0",
+  "description": "Write marginLeft, get RTL-safe styles. Automatic physical-to-logical style property mapping for React Native.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -13,27 +13,48 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
+  "sideEffects": false,
   "scripts": {
     "build": "tsup",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
   },
   "keywords": [
     "react-native",
     "rtl",
     "i18n",
+    "internationalization",
     "arabic",
-    "hebrew",
     "urdu",
-    "stylesheet"
+    "hebrew",
+    "stylesheet",
+    "expo",
+    "right-to-left"
   ],
-  "author": "",
+  "author": "Abdullah Altaf <dev@abdullahaltaf.com> (https://abdullahaltaf.com)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raja-abdullah/react-native-rtl-kit.git"
+  },
+  "homepage": "https://github.com/raja-abdullah/react-native-rtl-kit#readme",
+  "bugs": {
+    "url": "https://github.com/raja-abdullah/react-native-rtl-kit/issues"
+  },
   "peerDependencies": {
     "react": ">=17",
     "react-native": ">=0.70"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/react": "^19.2.18",
